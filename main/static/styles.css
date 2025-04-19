@@ -32,6 +32,38 @@ body::-webkit-scrollbar{
     list-style: none;
 }
 
+.container{
+    width: 1200px;
+    height: auto;
+    margin: 50px auto;
+}
+.blocks{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.block{
+    width: 285px;
+    height: 500px;
+    border-radius: 20px;
+    box-shadow: 2px 5px 5px rgba(117, 112, 112, 0.411);
+    position: relative;
+}
+.block img{
+    width: 100%;
+}
+.block h1 {
+    position: absolute;
+    bottom: 50px;
+}
+.block a{
+    position: absolute;
+    bottom: 20px;
+}
+
 @media screen and (max-width: 600px) {
     body{
         overflow-x: hidden;
