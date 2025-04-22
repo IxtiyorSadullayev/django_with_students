@@ -7,4 +7,7 @@ class ProductModel(models.Model):
     price=models.IntegerField()
     photo=models.ImageField(upload_to='product')
     created=models.DateTimeField(auto_now_add=True)
-    updated=models.DateTimeField(auto_created=True)
+    updated=models.DateTimeField(auto_now=True, )
+
+    def __str__(self):
+        return self.name

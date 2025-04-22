@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productlar</title>
     <!-- buni o'zgaritirasizlar djangoga moslashtiriasizlar -->
-     <link rel="stylesheet" href="./../static/styles.css">
+     <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body>
     <!-- nav -->
@@ -23,71 +24,21 @@
      <!-- head -->
     <section class="container">
         <div class="blocks">
+            {% for product in products %}            
             <div class="block">
-                <img src="https://www.coca-cola.com/content/dam/onexp/kz/ru/brand-coca-cola/coca-cola-zero-sugar_product_image-desktop.jpg" alt="">
-                <h5>Coca cola</h5>
-                <p>About Lorem ipsum dolor sit.</p>
-                <h1>13 000  so'm</h1>
-                <a href="/product/id">To'liq ma'lumot</a>
+                <img src="{{product.photo.url}}" alt="{{product.name}}">
+                <h5>{{product.name}}</h5>
+                <p>{{product.about}}</p>
+                <h1>{{product.price}}  so'm</h1>
+                <a href="/product/{{product.pk}}">To'liq ma'lumot</a>
             </div>
-            <div class="block">
-                <img src="https://www.coca-cola.com/content/dam/onexp/kz/ru/brand-coca-cola/coca-cola-zero-sugar_product_image-desktop.jpg" alt="">
-                <h5>Coca cola</h5>
-                <p>About Lorem ipsum dolor sit.</p>
-                <h1>13 000  so'm</h1>
-                <a href="/product/id">To'liq ma'lumot</a>
-            </div>
-
-            <div class="block">
-                <img src="https://www.coca-cola.com/content/dam/onexp/kz/ru/brand-coca-cola/coca-cola-zero-sugar_product_image-desktop.jpg" alt="">
-                <h5>Coca cola</h5>
-                <p>About Lorem ipsum dolor sit.</p>
-                <h1>13 000  so'm</h1>
-                <a href="/product/id">To'liq ma'lumot</a>
-            </div>
-
-            <div class="block">
-                <img src="https://www.coca-cola.com/content/dam/onexp/kz/ru/brand-coca-cola/coca-cola-zero-sugar_product_image-desktop.jpg" alt="">
-                <h5>Coca cola</h5>
-                <p>About Lorem ipsum dolor sit.</p>
-                <h1>13 000  so'm</h1>
-                <a href="/product/id">To'liq ma'lumot</a>
-            </div>
-
-            <div class="block">
-                <img src="https://www.coca-cola.com/content/dam/onexp/kz/ru/brand-coca-cola/coca-cola-zero-sugar_product_image-desktop.jpg" alt="">
-                <h5>Coca cola</h5>
-                <p>About Lorem ipsum dolor sit.</p>
-                <h1>13 000  so'm</h1>
-                <a href="/product/id">To'liq ma'lumot</a>
-            </div>
-            <div class="block">
-                <img src="https://www.coca-cola.com/content/dam/onexp/kz/ru/brand-coca-cola/coca-cola-zero-sugar_product_image-desktop.jpg" alt="">
-                <h5>Coca cola</h5>
-                <p>About Lorem ipsum dolor sit.</p>
-                <h1>13 000  so'm</h1>
-                <a href="/product/id">To'liq ma'lumot</a>
-            </div>
-            <div class="block">
-                <img src="https://www.coca-cola.com/content/dam/onexp/kz/ru/brand-coca-cola/coca-cola-zero-sugar_product_image-desktop.jpg" alt="">
-                <h5>Coca cola</h5>
-                <p>About Lorem ipsum dolor sit.</p>
-                <h1>13 000  so'm</h1>
-                <a href="/product/id">To'liq ma'lumot</a>
-            </div>
-            <div class="block">
-                <img src="https://www.coca-cola.com/content/dam/onexp/kz/ru/brand-coca-cola/coca-cola-zero-sugar_product_image-desktop.jpg" alt="">
-                <h5>Coca cola</h5>
-                <p>About Lorem ipsum dolor sit.</p>
-                <h1>13 000  so'm</h1>
-                <a href="/product/id">To'liq ma'lumot</a>
-            </div>
+            {% endfor %}            
         </div>
         
     </section>
       <!-- footer -->
 
 
-    <script src="./static/main.js"></script>
+    <script src="{% static 'main.js' %}"></script>
 </body>
 </html>
